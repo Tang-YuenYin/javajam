@@ -4,11 +4,12 @@
 
 <!-- metadata goes in head - Contains information that describes the web page document -->
     <meta charset="utf-8">
-	<title>JavaJam Coffee House Jobs</title>
+	<title>JavaJam Coffee House</title>
+    <link rel="stylesheet" href="javajam.css">
 </head>
 <body>
 <!-- content goes in the body - contains text and elements that display in the web page document -->
-
+<div id="wrapper">
 <header> 
 <!-- Contains the web page document’s headings  -->
     <h1>JavaJam Coffee House</h1>
@@ -28,46 +29,48 @@
 <p>Want to work at JavaJam? Fill out the form below to start your application. Required 
     fields are marked with an asterisk (*).</p>
     <form method="post"action="http://webdevbasics.net/scripts/javajam8.php">
-</main>
-<p>
-    <label for="Name">*Name:<br> </label>
-    <input id="Name" type="text" name="Name"required>
-</p>
-<p>
-    <label for="email">Email<br></label>
-    <input type="email" id="email" name="email" required>
 
-</p>
-<p>
+
+    <label for="Name">*Name:<br> </label>
+    <input id="Name" type="text" name="Name"required placeholder="Enter your Name">
+
+<br>
+    <label for="email">*Email<br></label>
+    <input type="email" id="email" name="email" required  placeholder="Enter your Email">
+
+
+
     <label for="experience">*Experience: </label>
     <br>
-    <textarea id="experience" rows="10" cols="30" name="experience"></textarea>
-</p>
-<p>
+    <textarea id="experience" rows="10" cols="30" name="experience" placeholder="Enter your Expereience"></textarea>
+
+<div>
     <label for="position">Please job position: </label>
     <select name="position" id="position">
         <option value="barista">Barista</option>
-        <option value="cashiew">Cashier</option>
-        <option value="sparttimer">Part Timer</option>
+        <option value="cashier">Cashier</option>
+        <option value="parttimer">Part Timer</option>
     </select>
-</p>
+</div>
+<br>
 
-<p>
     <label for="datetime">Preferred Interview Date and Time: <br></label>
     <input type="datetime-local" id="interviewdatetime" name="interviewdatetime">
-</p>
 
-<p>
+
+<br><br>
     <label for="myfile">Upload your photo:</label>
     <input type="file" id="myfile" name="myfile">
-</p>
+<br><br>
+
 <input type="submit" value="Apply Now">
+</main>
 <footer> 
 <!-- Contains the web page document’s footer information  -->
-<small><i><br>Copyright &copy; 2023 JavaJam Coffee House <br>
+<br>Copyright &copy; 2023 JavaJam Coffee House <br>
 <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
-</i></small>
+
 </footer>
-    
+</div>  
 </body>
 </html>
