@@ -45,12 +45,58 @@
     <textarea id="experience" rows="10" cols="30" name="experience" placeholder="Enter your Expereience"></textarea>
 
 <div>
-    <label for="position">Please job position: </label>
-    <select name="position" id="position">
+    <label for="position">Please select job position: </label>
+    <!-- <select name="position" id="position">
         <option value="barista">Barista</option>
         <option value="cashier">Cashier</option>
         <option value="parttimer">Part Timer</option>
+    </select> -->
+    <select id ="joblist">
+    <script>
+        //2(a)
+        var jobclass=[{code: "ba", name:"Barista",scope:"Preparing and serving hot and cold drinks such as coffee, tea, artisan and speciality beverages."},
+                       {code: "ma", name:"Manager",scope:"Managing day-to-day operations of the cafe."},
+                       {code: "tr", name:"Trainee",scope:"Supporting daily operations of the cafe."}
+                    ];
+        
+        //2(b)
+  // Begin the drop-down list HTML
+ // document.write('<select id ="joblist">');
+
+// Loop through the jobclass array to generate options
+for (var i = 0; i < jobclass.length; i++) {
+    // Create an option element
+    document.write('<option value="' + jobclass[i].code + '">' + jobclass[i].name + '</option>');
+}
+
+// End the drop-down list HTML
+//document.write('</select>');
+
+            //2(d)
+            
+
+    </script>
     </select>
+        <!-- //2(c) -->
+        <p id="jobScope">Choose a job</p> 
+        <script>
+               // Get a reference to the drop-down list
+            var select = document.querySelector("#joblist");
+            var description=document.querySelector("#jobScope");
+            select.addEventListener('change',function(){
+                // Get the selected job code
+            var selectedCode = this.value;
+
+                // Find the job class with the selected code
+            var selectedJob = jobclass.find(function (job) {
+                //strict equality which only will return true if the value and data type are the samee 
+             return job.code === selectedCode;
+                });
+
+// Display the job scope
+description.textContent = selectedJob ? selectedJob.scope : "Choose a job";
+            })
+        </script>
 </div>
 <br>
 
